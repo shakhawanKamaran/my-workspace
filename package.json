@@ -1,0 +1,20 @@
+{
+  "name": "my-workspace",
+  "version": "1.0.0",
+  "description": "ChampBVT's playground",
+  "author": "ChampBVT",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "web",
+    "packages/*"
+  ],
+  "scripts": {
+    "start:all": "concurrently \"yarn web dev\" --restart-tries -1 --restart-after 10000",
+    "web": "yarn workspace web"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "husky": "^7.0.2"
+  }
+}
